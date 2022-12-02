@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SURF CHECK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.css" integrity="sha512-KJRB1wUfcipHY35z9dEE+Jqd+pGCuQ2JMZmQPAjwPjXuzz9oL1pZm2cd79vyUgHQxvb9sFQ6f05DIz0IqcG1Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .hero-jumbotron {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4)), url(static/images/ocean.jpg); 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 95vh;
+    }
+    .hero-content {
+      text-align: center;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  <!-- <div class="wrapper">
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+      <a class="navbar-brand" href="index.html"> SURF CHECK</a>
+    </nav>
+  </div> -->
+  <div class="hero-jumbotron d-flex justify-content-center align-items-center">
+    <div class="hero-content">
+        <h1 class="display-3">SURF CHECK</h1>
+    </div>
+    
+  </div>
+  <div class="container-fluid mt-4">
+    <div class="row pt-4">
+      <div class="col-md-4">
+        <h3> Search for a beach below to check its surf forcast! </h3>
+      </div>
+      <div class="col-md-8">
+        <p>
+          Diehard lovers of the ocean and surfing, a small group of UC Berkeley data
+          professionals were inspired to create a website that would predict surf forecasts
+          in the Golden State of California. The purpose of this project is to gather maritime
+          weather conditions using an API from worldweatheronline.com to call for the surf
+          forecasts of every and all surfable beaches within California using the given
+          parameters of: latitude, longitude, sunrise, sunset, weather, termperture, weather
+          temperature, cloud cover, wind speed, wave height, and wave size.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <form class="bg-light my-5">
+          <ul class="list-group bg-light">
+            <li class="list-group-item bg-light">
+              <label for="beach">Filter Search Beach</label>
+              <select class="form-select form-control" aria-label="Default select example" id="beach">
+                <option selected value="">Select a Beach</option>
+              </select>
+              <!-- <input class="w-100" type="text" placeholder="e.g. San Onofre State Beach" id="beach-search-input" /> -->
+              <button class="btn btn-primary float-right" id="beach-search-btn">Search</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+    <div class="container-fluid">
+        <div id="map" style="width:100%; height: 50vh;"></div>
+    </div>
+    <div class="row p-3">
+      <div class="table-responsive mb-5">
+        <table class="table table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">weather</th>
+              <th scope="col">beach_name</th>
+              <th scope="col">latitude</th>
+              <th scope="col">longitude</th>
+              <th scope="col">date</th>
+              <th scope="col">time</th>
+              <th scope="col">sunrise</th>
+              <th scope="col">sunset</th>
+              <th scope="col">weather_description</th>
+              <th scope="col">temperature</th>
+              <th scope="col">water_temperature</th>
+              <th scope="col">cloud_cover</th>
+              <th scope="col">wind_speed</th>
+              <th scope="col">wave_height</th>
+              <th scope="col">wave_size</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-list"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container-fluid">
+      <hr />
+      <div class="row m-4">
+        <p>Surf Check &copy; 2022</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.js" integrity="sha512-Io0KK/1GsMMQ8Vpa7kIJjgvOcDSwIqYuigJEYxrrObhsV4j+VTOQvxImACNJT5r9O4n+u9/58h7WjSnT5eC4hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="static/js/data.min.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
